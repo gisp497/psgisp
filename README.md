@@ -22,14 +22,25 @@ By default every user and every group is exported.
 It is possible to choose the users and groups with parameters User and Group.
 ![image](https://user-images.githubusercontent.com/114616565/194775615-96f94672-0a0e-4af8-86b6-8a1c41f880cd.png)
 
-## Set-ADUserPassword
+### Set-ADUserPassword
 This function sets random generated passwords for specific users.
 ![image](https://user-images.githubusercontent.com/114616565/194776336-b2a63053-4448-4f88-82c6-d119b93d2b7f.png)
 
 To see the decrypted password you need the following command.
 ![image](https://user-images.githubusercontent.com/114616565/194776409-9a1e04e4-69a7-48cd-8721-50a192ac0aec.png)
 
-## Import-PrintGPO
+### Import-PrintGPO
+This function will import printer to the GPO.
+It is mandatory, that a GPO with one Printer is already added!
+![image](https://user-images.githubusercontent.com/114616565/194777089-a9369c90-6b6d-41e0-b414-3487535a66cb.png)
+
+If the Print GPO is prepared you can use the command to add the printers.
+![image](https://user-images.githubusercontent.com/114616565/194777154-387c8ef7-1a35-4b8a-963c-3a7599a3a22d.png)
+
+Result:
+![image](https://user-images.githubusercontent.com/114616565/194777178-a4e52518-740c-453c-83fa-14090977816f.png)
+
+
 
 ## Microsoft 365
 
