@@ -15,7 +15,21 @@ Now the GPOs are imported correctly.
 ![image](https://user-images.githubusercontent.com/114616565/194757024-57ce831c-d8b4-4c90-8baa-b19aac399c65.png)
 
 ### Get-ADUserPermission
+This function will export users and their groupmembership.
+By default every user and every group is exported.
+![image](https://user-images.githubusercontent.com/114616565/194775663-2b2bfa61-10d7-4b5a-826f-2ae7771c8f0d.png)
 
+It is possible to choose the users and groups with parameters User and Group.
+![image](https://user-images.githubusercontent.com/114616565/194775615-96f94672-0a0e-4af8-86b6-8a1c41f880cd.png)
+
+## Set-ADUserPassword
+This function sets random generated passwords for specific users.
+![image](https://user-images.githubusercontent.com/114616565/194776336-b2a63053-4448-4f88-82c6-d119b93d2b7f.png)
+
+To see the decrypted password you need the following command.
+![image](https://user-images.githubusercontent.com/114616565/194776409-9a1e04e4-69a7-48cd-8721-50a192ac0aec.png)
+
+## Import-PrintGPO
 
 ## Microsoft 365
 
