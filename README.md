@@ -29,10 +29,14 @@ This functions creates random strings. It is possible to generate Secure Strings
 This function can be used to combine two objects into a table.
 In this example I am going to use AD User and Groups to show the purpose of this function.
 
+This Object which is used for the rows.
 ![image](https://user-images.githubusercontent.com/114616565/194774695-e3658f41-e44e-4d64-be87-32aa744162b1.png)
 
+This Object is used for columns. The Property Name is used for the Title of the Columns. 
 ![image](https://user-images.githubusercontent.com/114616565/194774750-b9c66d66-8a21-4184-b6dc-640ee587a024.png)
 
-![image](https://user-images.githubusercontent.com/114616565/194774799-0c107842-c534-4ce8-87f6-959878b6536e.png)
+If you use the Parameter FieldValueUnrelated, every Field will will have the same content.
+![image](https://user-images.githubusercontent.com/114616565/194774908-0170063b-aa67-4d6d-a72f-73ca5b1ac365.png)
 
-![image](https://user-images.githubusercontent.com/114616565/194774838-faae3ede-78d8-45a5-a11d-efdff495a6cf.png)
+If you use the Parameter FieldValue, every Field will have specific content from the column Object.
+![image](https://user-images.githubusercontent.com/114616565/194774963-e84e7ef7-a661-4186-adb7-11b8f395a1cf.png)
