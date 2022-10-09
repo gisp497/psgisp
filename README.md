@@ -1,4 +1,6 @@
 # PSGISP
+This Powershell Module contains different functions for Active Directory, Microsoft 365 and more.
+
 ## Active Directory
 ### Import-BulkGPO
 If you export multiple GPOs they want have have the correct and again import, they wan't have the correct GPO Name. This function is able to get the correct Name out of the Manifest XML File, which is an automatically created and hidden File.
@@ -38,9 +40,16 @@ If the Print GPO is prepared you can use the command to add the printers.
 ![image](https://user-images.githubusercontent.com/114616565/194777154-387c8ef7-1a35-4b8a-963c-3a7599a3a22d.png)
 
 Result:
+
 ![image](https://user-images.githubusercontent.com/114616565/194777178-a4e52518-740c-453c-83fa-14090977816f.png)
 
+### Export-ADUser
+This function can be used to export AD user to an object.
+![image](https://user-images.githubusercontent.com/114616565/194777522-7b79b6ca-ac6c-40ce-ba88-f1783c7e8ada.png)
 
+### Import-ADUser
+This function can import the exported users from the command Export-ADUser.
+![image](https://user-images.githubusercontent.com/114616565/194778084-097a1721-d22d-4d6c-9657-bbb448012aa7.png)
 
 ## Microsoft 365
 
