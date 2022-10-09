@@ -29,3 +29,10 @@ This functions creates random strings. It is possible to generate Secure Strings
 This function can be used to combine two objects into a table.
 In this example I am going to use AD User and Groups to show the purpose of this function.
 
+![image](https://user-images.githubusercontent.com/114616565/194774695-e3658f41-e44e-4d64-be87-32aa744162b1.png)
+
+![image](https://user-images.githubusercontent.com/114616565/194774750-b9c66d66-8a21-4184-b6dc-640ee587a024.png)
+
+![image](https://user-images.githubusercontent.com/114616565/194774799-0c107842-c534-4ce8-87f6-959878b6536e.png)
+
+![image](https://user-images.githubusercontent.com/114616565/194774838-faae3ede-78d8-45a5-a11d-efdff495a6cf.png)
