@@ -16,7 +16,7 @@ Function Import-ADUser {
         none
 
         .EXAMPLE
-        Import-ADUser -alluser $userprops
+        Import-ADUser -UserObject $userobject
 
         .LINK
         https://github.com/gisp497/psgisp/edit/main/README.md#import-aduser
