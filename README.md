@@ -52,6 +52,19 @@ This function can import the exported users from the command Export-ADUser.
 ![image](https://user-images.githubusercontent.com/114616565/194778084-097a1721-d22d-4d6c-9657-bbb448012aa7.png)
 
 ## Microsoft 365
+### Get-ExchangeOnlineMailboxPermission
+This function will export mailbox permission from Exchange Online into a object.
+```powershell
+Get-ExchangeOnlineMailboxPermission -Mailbox user1@domain.ch,user2.domain.ch
+```
+### Get-ExchangeOnlineCalendarPermission
+This function will export calender permission from Exchange Online into a object.
+```powershell
+Get-ExchangeOnlineCalendarPermission -Mailbox user1@domain.ch,user2.domain.ch
+```
+### New-AzureADAccess
+This function will create an ceritifcate based AzureAD access.
+With the parameter AzureADDirectoryRole it is possible to choose the permission the application will get.
 
 
 ## Tools
