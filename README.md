@@ -114,12 +114,12 @@ This Object is used for columns. The Property Name is used for the Title of the 
 
 If you use the Parameter FieldValueUnrelated, every Field will will have the same content.
 ```powershell
-Join-Table -Row $user -RowTitle "Name" -RowIdentifier "MemberOf" -Column $group -ColumnTitle "Name" -ColumnIdentifier "DistinguishedName" -FieldValue "Name"
+Join-Table -Row $user -RowTitle "Name" -RowIdentifier "MemberOf" -Column $group -ColumnTitle "Name" -ColumnIdentifier "DistinguishedName" -FieldValueUnrelated "Name"
 ```
 ![image](https://user-images.githubusercontent.com/114616565/194774908-0170063b-aa67-4d6d-a72f-73ca5b1ac365.png)
 
 If you use the Parameter FieldValue, every Field will have specific content from the column Object.
 ```powershell
-Join-Table -Row $user -RowTitle "Name" -RowIdentifier "MemberOf" -Column $group -ColumnTitle "Name" -ColumnIdentifier "DistinguishedName" -FieldValueUnrelated $true
+Join-Table -Row $user -RowTitle "Name" -RowIdentifier "MemberOf" -Column $group -ColumnTitle "Name" -ColumnIdentifier "DistinguishedName" -FieldValue $true
 ```
 ![image](https://user-images.githubusercontent.com/114616565/194774963-e84e7ef7-a661-4186-adb7-11b8f395a1cf.png)
