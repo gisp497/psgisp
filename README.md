@@ -24,7 +24,8 @@ By default every user and every group is exported.
 ```powershell
 Get-ADUserPermission
 ```
-![image](https://user-images.githubusercontent.com/114616565/194775663-2b2bfa61-10d7-4b5a-826f-2ae7771c8f0d.png)
+![image](https://user-images.githubusercontent.com/114616565/195150542-29ac9868-f140-4f59-bd9b-6b0347e4e7dd.png)
+
 
 It is possible to choose the users and groups with parameters User and Group.
 ```powershell
@@ -52,7 +53,7 @@ It is mandatory, that a GPO with one Printer is already added!
 
 If the Print GPO is prepared you can use the command to add the printers.
 ```powershell
-Import-PrintGPO -GPO usr-print-gpo -Printer "\\printserver\printer1","\\printserver\printer2" -Action create -DefaultPrinter -GroupFilter "group1"
+Import-PrintGPO -GPO "printer" -Printer "\\printserver\printer1","\\printserver\printer2" -Action create -DefaultPrinter -GroupFilter "group1"
 ```
 ![image](https://user-images.githubusercontent.com/114616565/194777154-387c8ef7-1a35-4b8a-963c-3a7599a3a22d.png)
 
@@ -107,7 +108,8 @@ This function can be used to combine two objects into a table.
 In this example I am going to use AD User and Groups to show the purpose of this function.
 
 This Object which is used for the rows.
-![image](https://user-images.githubusercontent.com/114616565/194774695-e3658f41-e44e-4d64-be87-32aa744162b1.png)
+![image](https://user-images.githubusercontent.com/114616565/195150828-c28c15dd-36e0-4b06-95be-4c6dfbd10369.png)
+
 
 This Object is used for columns. The Property Name is used for the Title of the Columns. 
 ![image](https://user-images.githubusercontent.com/114616565/194774750-b9c66d66-8a21-4184-b6dc-640ee587a024.png)
@@ -116,10 +118,11 @@ If you use the Parameter FieldValueUnrelated, every Field will will have the sam
 ```powershell
 Join-Table -Row $user -RowTitle "Name" -RowIdentifier "MemberOf" -Column $group -ColumnTitle "Name" -ColumnIdentifier "DistinguishedName" -FieldValueUnrelated "Name"
 ```
-![image](https://user-images.githubusercontent.com/114616565/194774908-0170063b-aa67-4d6d-a72f-73ca5b1ac365.png)
+![image](https://user-images.githubusercontent.com/114616565/195151040-2b29aa5a-4e9d-4932-b447-a176e5a9355d.png)
+
 
 If you use the Parameter FieldValue, every Field will have specific content from the column Object.
 ```powershell
 Join-Table -Row $user -RowTitle "Name" -RowIdentifier "MemberOf" -Column $group -ColumnTitle "Name" -ColumnIdentifier "DistinguishedName" -FieldValue $true
 ```
-![image](https://user-images.githubusercontent.com/114616565/194774963-e84e7ef7-a661-4186-adb7-11b8f395a1cf.png)
+![image](https://user-images.githubusercontent.com/114616565/195151155-c1937ae5-d343-4404-87e5-44390210dff2.png)
