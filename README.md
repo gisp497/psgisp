@@ -1,5 +1,6 @@
 # PSGISP
 This Powershell Module contains different functions for Active Directory, Microsoft 365 and more.
+This module is also published on the powershellgallery: https://www.powershellgallery.com/packages/PSGISP
 
 ## Active Directory
 ### Import-BulkGPO
