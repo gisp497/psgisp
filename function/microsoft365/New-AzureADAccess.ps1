@@ -100,7 +100,7 @@ Function New-AzureADAccess {
 
         # Now you can login to Azure PowerShell with your Service Principal and Certificate
         $outputobject = New-Object -TypeName psobject
-        Add-Member -InputObject $outputobject -MemberType NoteProperty -Name "Customer" -Value $clientdomain
+        Add-Member -InputObject $outputobject -MemberType NoteProperty -Name "Customer" -Value $tenant.DisplayName
         Add-Member -InputObject $outputobject -MemberType NoteProperty -Name "Tenant_ID" -Value $tenant.ObjectId
         Add-Member -InputObject $outputobject -MemberType NoteProperty -Name "Application_ID" -Value $sp.AppId
         Add-Member -InputObject $outputobject -MemberType NoteProperty -Name "Certificate_Thumbprint" -Value $thumb
