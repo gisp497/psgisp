@@ -93,7 +93,7 @@ Get-ExchangeOnlineCalendarPermission -Mailbox user1@domain.ch,user2.domain.ch
 This function will create an ceritifcate based AzureAD access.
 With the parameter AzureADDirectoryRole it is possible to choose the permission the application will get.
 ```powershell
-New-AzureADAccess -AzureADDirectoryRole Global Reader -CertLifetime 2
+New-AzureADAccess -Name "test" -Role "Global Reader" -CertLifetime 2
 ```
 
 ## Tools
