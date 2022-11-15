@@ -1,72 +1,61 @@
-Function Export-ADUser {
+Function Import-ADUser {
     <#
         .SYNOPSIS
-        Export User
+        Imports ADUser
 
         .DESCRIPTION
-        This function exports the most important aduser information into an psobject.
-        If more properties where needed, it is possible to add them by using the parameter additionalproperty.
+        Imports ADUser and their properties, which where saved with the Export-ADUser function.
 
-        .PARAMETER user
-        User or user array to export
-
-        .PARAMETER additionalproperty
-        Can be used to add additional property to the default ones.
+        .PARAMETER alluser
+        Exported PSObject from Export-ADUser function.
 
         .INPUTS
-        System.String[]
-
-        .OUTPUTS
         Selected.Microsoft.ActiveDirectory.Management.ADUser[]
 
+        .OUTPUTS
+        none
+
         .EXAMPLE
-        Export-ADUser -User "user1","user2" -AdditionalProperty "sid","whenCreated"
+        Import-ADUser -UserObject $userobject
 
         .LINK
-        https://github.com/gisp497/psgisp/edit/main/README.md#export-aduser
+        https://github.com/gisp497/psgisp/edit/main/README.md#import-aduser
     #>
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess)]
     param (
-        [Parameter(
+        [Parameter(Position=0,
             Mandatory = $true,
             ValueFromPipeline = $true,
-            HelpMessage = "User or user array to export"
-        )]
-        $User,
-        [Parameter(
-            Mandatory = $false,
-            ValueFromPipeline = $false,
-            HelpMessage = "Can be used to add additional property to the default ones."
-        )]
-        $AdditionalProperty
+            HelpMessage = "import object from Export-ADUser")]
+        $UserObject
     )
     Begin {
-        Write-Verbose "Install ActiveDirectory module"
-        if(Get-Module -ListAvailable ActiveDirectory){
-            Import-Module ActiveDirectory
-        }else{
-            Try{
-                Install-WindowsFeature -Name "RSAT-AD-PowerShell"
-            }catch{
-                Throw "Cant import module ActiveDirectory. Error: $_"
-            }
+        #Install ActiveDirectory module
+        try {
+            Import-Module ActiveDirectory -ErrorAction Stop
         }
-
-        Write-Verbose "Initialize variable"
-        $userproperties = @()
-        $allproperties = @("GivenName","sn","DisplayName","Description","mail","telephoneNumber","UserPrincipalName","sAmAccountname","HomeDirectory","HomeDrive")
-        if ($null -ne $AdditionalProperty) {
-            $AdditionalProperty | ForEach-Object {
-                $allproperties += $_
-            }
+        catch {
+            Throw "Cant import module ActiveDirectory. Error: $_"
         }
     }
     Process {
-        $User | Foreach-Object {
-            $userproperties += Get-ADUser -Identity $_ -Properties $allproperties | Select-Object -Property $allproperties
+        $UserObject | ForEach-Object {
+            #Initialize variable
+            $properties = @{}
+
+            #Check if properties are empty
+            $_.PSObject.Properties | ForEach-Object {
+                if("" -ne $_.Value){
+                    $properties.Add($_.Name, $_.Value)
+                }
+            }
+
+            #Create new user and set properties
+            Write-Verbose "Create new user and set properties"
+            New-ADUser -Name $_.DisplayName -sAmAccountname $_.sAmAccountname
+            Set-ADUser -Identity $_.sAmAccountname -Replace $properties
         }
     }
     End {
-        return $userproperties
     }
 }
